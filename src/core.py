@@ -1,4 +1,6 @@
 from __future__ import annotations
+SRC_DIR = Path(__file__).resolve().parent
+DATA_DIR = SRC_DIR / "data"
 
 # -*- coding: utf-8 -*-
 """Skillcorner_Submission_V1.ipynb
@@ -83,7 +85,7 @@ The cell also prints diagnostic information to verify that all files are present
 
 """
 
-BASE_DIR = Path("/src/data")
+BASE_DIR = DATA_DIR
 matches_path = BASE_DIR / "matches.json"
 matches_df = pd.read_json(matches_path)
 
@@ -1646,7 +1648,7 @@ and prints an overall accuracy
 """
 
 import qci_client as qc
-client = qc.QciClient(api_token="", url="https://api.qci-prod.com")
+# client = qc.QciClient(api_token="", url="https://api.qci-prod.com")
 
 # ============================
 # Dirac-3 Integration (Full)
@@ -2121,14 +2123,14 @@ def evaluate_dirac3_pass_accuracy(
 
     return pd.DataFrame(records)
 
-dirac_client = Dirac3Client(api_token="Your Token")
+# dirac_client = Dirac3Client(api_token="Your Token")
 
-theta = ThetaConfig(shot_count=16, mean_photon=1, n_levels=8, q_fluct=0.1)
-dirac_results_df = evaluate_dirac3_pass_accuracy(
-    client=dirac_client,
-    moment_indices=range(100),
-    theta=theta,
-)
+# theta = ThetaConfig(shot_count=16, mean_photon=1, n_levels=8, q_fluct=0.1)
+# dirac_results_df = evaluate_dirac3_pass_accuracy(
+#     client=dirac_client,
+#     moment_indices=range(100),
+#     theta=theta,
+# )
 
 rr"""### 18.7 Caching Dirac-3 Hardware Results (Parquet Files)
 Running Dirac-3 involves submitting real quantum jobs to QCi’s photonic hardware.  
@@ -2156,8 +2158,8 @@ Together, this shows that photonic quantum optimisation is not only viable, but
 competitively strong for structured sports-analytics problems such as pass selection.
 """
 
-df0 = pd.read_parquet("dirac_results_batch_0.parquet")
-df1 = pd.read_parquet("dirac_results_batch_1.parquet")
+df0 = pd.read_parquet(DATA_DIR / "dirac_results_batch_0.parquet")
+df1 = pd.read_parquet(DATA_DIR / "dirac_results_batch_1.parquet")
 
 dirac_all = pd.concat([df0, df1], ignore_index=True)
 total = len(dirac_all)
