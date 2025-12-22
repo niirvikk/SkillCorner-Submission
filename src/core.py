@@ -1,4 +1,6 @@
 from __future__ import annotations
+from pathlib import Path
+
 SRC_DIR = Path(__file__).resolve().parent
 DATA_DIR = SRC_DIR / "data"
 
