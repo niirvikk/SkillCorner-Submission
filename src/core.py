@@ -28,8 +28,6 @@ Run this cell first to load all required libraries and initial settings used thr
 It ensures that all core dependencies for data processing, pass extraction, visualisation, QUBO construction, and QAOA evaluation are available before proceeding.
 """
 
-!pip install "qiskit>=0.46" "qiskit-algorithms>=0.4.0"
-
 # ----------------------------
 # Core libraries
 # ----------------------------
@@ -1648,7 +1646,6 @@ The function returns a DataFrame with:
 and prints an overall accuracy
 """
 
-!pip install qci-client
 import qci_client as qc
 client = qc.QciClient(api_token="", url="https://api.qci-prod.com")
 
