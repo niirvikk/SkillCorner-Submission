@@ -71,9 +71,6 @@ import warnings
 warnings.filterwarnings("ignore")
 from pathlib import Path
 
-from google.colab import drive
-drive.mount('/content/drive')
-
 """## 2. Load Matches, Metadata, Events, and Phases
 
 This section loads the core data sources required for the analysis:
@@ -89,7 +86,7 @@ The cell also prints diagnostic information to verify that all files are present
 
 """
 
-BASE_DIR = Path("/content/drive/MyDrive/SkillCorner/opendata-master/data")
+BASE_DIR = Path("/src/data")
 matches_path = BASE_DIR / "matches.json"
 matches_df = pd.read_json(matches_path)
 
