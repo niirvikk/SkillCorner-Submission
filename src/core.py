@@ -488,7 +488,7 @@ def score_candidates_for_moment(moment):
         c["value_score"] = score_candidate(c)
     return candidates
 
-rr"""## 10. QUBO Formulation for a Pass Selection Problem
+r"""## 10. QUBO Formulation for a Pass Selection Problem
 
 For each decision moment, we have \(k\) candidate **passes** with value  
 scores \(\{v_i\}_{i=1}^k\). We introduce binary variables  
@@ -551,7 +551,7 @@ def build_qubo_for_moment(moment, penalty=5.0):
     # The constant term penalty * 1 is omitted since it does not affect argmin.
     return Q, candidates
 
-rr"""## 11. Exact QUBO Solver (Brute-Force Baseline)
+r"""## 11. Exact QUBO Solver (Brute-Force Baseline)
 
 For small decision problems (i.e., a limited number of pass candidates),  
 we can solve the QUBO **exactly** by enumerating all \(2^k\) possible  
@@ -587,7 +587,7 @@ def solve_qubo_bruteforce(Q: np.ndarray):
 
     return best_z, best_energy
 
-rr"""## 12. Converting QUBO to an Ising Hamiltonian (Qiskit Format)
+r"""## 12. Converting QUBO to an Ising Hamiltonian (Qiskit Format)
 
 QAOA in Qiskit requires the optimisation problem to be expressed as an  
 **Ising Hamiltonian** of the form:
@@ -897,7 +897,7 @@ plt.grid(alpha=0.3)
 plt.legend()
 plt.show()
 
-rr"""## 15. Decision Error Score (DES) and Quantum Error Score (QES)
+r"""## 15. Decision Error Score (DES) and Quantum Error Score (QES)
 
 To benchmark real player decisions against both the *optimal* choice and the  
 QAOA-predicted choice, we compute two evaluation metrics:
@@ -1229,7 +1229,7 @@ cluster_to_label
 player_stats["cluster_label"] = player_stats["cluster"].map(cluster_to_label)
 player_stats.head()
 
-rr"""## Example Decision Moment – QAOA vs Optimal vs Actual Pass (Moment #33)
+r"""## Example Decision Moment – QAOA vs Optimal vs Actual Pass (Moment #33)
 
 To illustrate how our quantum decision pipeline works, we inspect a real on-ball decision from the match.
 
@@ -1479,7 +1479,7 @@ def show_decision_example(moment_idx: int):
 
 show_decision_example(33)   # example
 
-rr"""## 18. Dirac-3 Integration (Photonic Quantum Hardware by QCi)
+r"""## 18. Dirac-3 Integration (Photonic Quantum Hardware by QCi)
 
 In this section we plug our **pass-selection QUBOs** into a *real quantum device*:
 **Dirac-3**, a continuous-variable **photonic quantum computer** operated by [Quantum Computing Inc. (QCi)](https://www.quantumcomputinginc.com/).
@@ -2132,7 +2132,7 @@ def evaluate_dirac3_pass_accuracy(
 #     theta=theta,
 # )
 
-rr"""### 18.7 Caching Dirac-3 Hardware Results (Parquet Files)
+r"""### 18.7 Caching Dirac-3 Hardware Results (Parquet Files)
 Running Dirac-3 involves submitting real quantum jobs to QCi’s photonic hardware.  
 These jobs take time and may incur queue delays, so **we do not want to recompute
 results every time the notebook runs**.
@@ -2168,7 +2168,7 @@ accuracy = correct / total if total > 0 else 0.0
 
 print(f"Dirac-3 accuracy vs optimal: {accuracy:.3f}")
 
-rr"""## 19. Final Summary and Key Insights
+r"""## 19. Final Summary and Key Insights
 
 This project evaluates whether **quantum optimisation** — using both  
 **QAOA (gate-based quantum simulation)** and **Dirac-3 (photonic quantum hardware)** —  
