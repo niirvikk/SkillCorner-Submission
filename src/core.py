@@ -96,56 +96,56 @@ matches_df = pd.read_json(matches_path)
 # ----------------------------------------------
 
 matches_path = BASE_DIR / "matches.json"
-print("Matches file exists:", matches_path.exists())
+#print("Matches file exists:", matches_path.exists())
 
 matches_df = pd.read_json(matches_path)
-display(matches_df.head())
+#display(matches_df.head())
 
 # ----------------------------------------------
 # Select a match_id to work with
 # ----------------------------------------------
 
 match_id = str(matches_df.iloc[0]["id"])
-print("Using match_id:", match_id)
+#print("Using match_id:", match_id)
 
 # ----------------------------------------------
 # Load match directory and metadata
 # ----------------------------------------------
 
 match_dir = BASE_DIR / "matches" / match_id
-print("Match dir:", match_dir)
-print("Exists:", match_dir.exists())
+#print("Match dir:", match_dir)
+##print("Exists:", match_dir.exists())
 print("Files:", [p.name for p in match_dir.iterdir()])
 
 match_meta_path = match_dir / f"{match_id}_match.json"
-print("Meta file exists:", match_meta_path.exists())
+#print("Meta file exists:", match_meta_path.exists())
 
 with open(match_meta_path, "r") as f:
     match_meta = json.load(f)
 
-print("Keys in match_meta:", list(match_meta.keys()))
+#print("Keys in match_meta:", list(match_meta.keys()))
 
 # ----------------------------------------------
 # Load dynamic events
 # ----------------------------------------------
 
 events_path = match_dir / f"{match_id}_dynamic_events.csv"
-print("Events file exists:", events_path.exists())
+#print("Events file exists:", events_path.exists())
 
 events_df = pd.read_csv(events_path)
-print("Events shape:", events_df.shape)
-display(events_df.head())
+#print("Events shape:", events_df.shape)
+#display(events_df.head())
 
 # ----------------------------------------------
 # Load phases of play
 # ----------------------------------------------
 
 phases_path = match_dir / f"{match_id}_phases_of_play.csv"
-print("Phases file exists:", phases_path.exists())
+#print("Phases file exists:", phases_path.exists())
 
 phases_df = pd.read_csv(phases_path)
-print("Phases shape:", phases_df.shape)
-display(phases_df.head())
+#print("Phases shape:", phases_df.shape)
+#display(phases_df.head())
 
 """## 3. Load Tracking Data (JSONL via GitHub LFS Proxy)
 
@@ -179,7 +179,7 @@ tracking_data_github_url = (
 
 raw_data = pd.read_json(tracking_data_github_url, lines=True)
 
-print("Loaded tracking frames:", len(raw_data))
+#print("Loaded tracking frames:", len(raw_data))
 
 # --------------------------------------------------
 # Basic check: number of players detected per frame
@@ -1229,7 +1229,7 @@ for label, (_, row) in zip(ordered_labels, cluster_stats_sorted.iterrows()):
 cluster_to_label
 
 player_stats["cluster_label"] = player_stats["cluster"].map(cluster_to_label)
-player_stats.head()
+display(player_stats.head())
 
 r"""## Example Decision Moment – QAOA vs Optimal vs Actual Pass (Moment #33)
 
