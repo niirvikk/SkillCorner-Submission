@@ -1231,11 +1231,11 @@ cluster_to_label
 player_stats["cluster_label"] = player_stats["cluster"].map(cluster_to_label)
 display(player_stats.head())
 
-r"""## Example Decision Moment – QAOA vs Optimal vs Actual Pass (Moment #33)
+r"""## Example Decision Moment – QAOA vs Optimal vs Actual Pass (Moment #2)
 
 To illustrate how our quantum decision pipeline works, we inspect a real on-ball decision from the match.
 
-- **Decision moment:** #33  
+- **Decision moment:** #2 
 - **Period:** 1  
 - **Event ID:** `9_128`  
 - **Ball carrier (tracking ID):** `4332`  
@@ -1479,7 +1479,7 @@ def show_decision_example(moment_idx: int):
             print(f"QES (QAOA - actual) : {QES:.3f}")
     print("=" * 80)
 
-show_decision_example(33)   # example
+show_decision_example(2)   # example
 
 r"""## 18. Dirac-3 Integration (Photonic Quantum Hardware by QCi)
 
