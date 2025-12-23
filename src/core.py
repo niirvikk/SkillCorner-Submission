@@ -767,7 +767,7 @@ warnings.filterwarnings("ignore")
 
 def evaluate_qaoa_vs_bruteforce(
     decision_moments,
-    max_moments=100,
+    max_moments=200,
     qaoa_reps=2,
     qaoa_maxiter=100
 ):
