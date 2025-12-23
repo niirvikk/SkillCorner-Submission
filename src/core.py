@@ -115,7 +115,7 @@ match_id = str(matches_df.iloc[0]["id"])
 match_dir = BASE_DIR / "matches" / match_id
 #print("Match dir:", match_dir)
 ##print("Exists:", match_dir.exists())
-print("Files:", [p.name for p in match_dir.iterdir()])
+#print("Files:", [p.name for p in match_dir.iterdir()])
 
 match_meta_path = match_dir / f"{match_id}_match.json"
 #print("Meta file exists:", match_meta_path.exists())
