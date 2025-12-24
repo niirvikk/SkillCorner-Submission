@@ -822,8 +822,8 @@ def evaluate_qaoa_vs_bruteforce(
 
     df = pd.DataFrame(records)
     if not df.empty:
-        print("QAOA match rate:", df["qaoa_matches_opt"].mean())
-        print("Mean value gap:", df["value_gap"].mean())
+        #print("QAOA match rate:", df["qaoa_matches_opt"].mean())
+        #print("Mean value gap:", df["value_gap"].mean())
 
     return df
 
@@ -871,7 +871,7 @@ plt.ylabel("QAOA exact-match rate")
 plt.title("QAOA Accuracy vs. Decision Complexity")
 plt.ylim(0, 1)
 plt.grid(axis="y", alpha=0.3)
-plt.show()
+#plt.show()
 
 acc_by_k
 
@@ -881,7 +881,7 @@ plt.xlabel("Value gap (opt_value − qaoa_value)")
 plt.ylabel("Count")
 plt.title("Distribution of QAOA Value Gaps")
 plt.grid(axis="y", alpha=0.3)
-plt.show()
+#plt.show()
 
 eval_df["value_gap"].describe()
 
@@ -897,7 +897,7 @@ plt.ylabel("QAOA-selected value")
 plt.title("QAOA vs Optimal Decision Value")
 plt.grid(alpha=0.3)
 plt.legend()
-plt.show()
+#plt.show()
 
 r"""## 15. Decision Error Score (DES) and Quantum Error Score (QES)
 
@@ -1144,8 +1144,8 @@ def decision_accuracy(cand_subset, model, features):
 qaoa_acc = eval_df["qaoa_matches_opt"].mean()
 baseline_acc = decision_accuracy(test_df, baseline_clf, features)
 
-print("QAOA accuracy:", qaoa_acc)
-print("ML baseline accuracy:", baseline_acc)
+#print("QAOA accuracy:", qaoa_acc)
+#print("ML baseline accuracy:", baseline_acc)
 
 """## 17. Player Clustering Based on Decision-Making Profiles
 
@@ -2121,7 +2121,7 @@ def evaluate_dirac3_pass_accuracy(
         return pd.DataFrame()
 
     acc = n_correct / n_total
-    print(f"Dirac-3 accuracy vs optimal: {acc:.3f}  ({n_correct}/{n_total})")
+    #print(f"Dirac-3 accuracy vs optimal: {acc:.3f}  ({n_correct}/{n_total})")
 
     return pd.DataFrame(records)
 
