@@ -2168,7 +2168,7 @@ total = len(dirac_all)
 correct = dirac_all["correct"].sum()
 accuracy = correct / total if total > 0 else 0.0
 
-print(f"Dirac-3 accuracy vs optimal: {accuracy:.3f}")
+#print(f"Dirac-3 accuracy vs optimal: {accuracy:.3f}")
 
 r"""## 19. Final Summary and Key Insights
 
