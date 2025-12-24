@@ -822,8 +822,8 @@ def evaluate_qaoa_vs_bruteforce(
 
     df = pd.DataFrame(records)
     if not df.empty:
-        print("QAOA match rate:", df["qaoa_matches_opt"].mean())
-        print("Mean value gap:", df["value_gap"].mean())
+        ("QAOA match rate:", df["qaoa_matches_opt"].mean())
+        ("Mean value gap:", df["value_gap"].mean())
 
     return df    
 
@@ -864,40 +864,40 @@ acc_by_k = (
     .reset_index()
 )
 
-plt.figure(figsize=(6, 4))
-plt.bar(acc_by_k["n_candidates"], acc_by_k["qaoa_matches_opt"])
-plt.xlabel("Number of candidate passes")
-plt.ylabel("QAOA exact-match rate")
-plt.title("QAOA Accuracy vs. Decision Complexity")
-plt.ylim(0, 1)
-plt.grid(axis="y", alpha=0.3)
-#plt.show()
+# plt.figure(figsize=(6, 4))
+# plt.bar(acc_by_k["n_candidates"], acc_by_k["qaoa_matches_opt"])
+# plt.xlabel("Number of candidate passes")
+# plt.ylabel("QAOA exact-match rate")
+# plt.title("QAOA Accuracy vs. Decision Complexity")
+# plt.ylim(0, 1)
+# plt.grid(axis="y", alpha=0.3)
+# plt.show()
 
 acc_by_k
 
-plt.figure(figsize=(6, 4))
-eval_df["value_gap"].hist(bins=20)
-plt.xlabel("Value gap (opt_value − qaoa_value)")
-plt.ylabel("Count")
-plt.title("Distribution of QAOA Value Gaps")
-plt.grid(axis="y", alpha=0.3)
-#plt.show()
+# plt.figure(figsize=(6, 4))
+# eval_df["value_gap"].hist(bins=20)
+# plt.xlabel("Value gap (opt_value − qaoa_value)")
+# plt.ylabel("Count")
+# plt.title("Distribution of QAOA Value Gaps")
+# plt.grid(axis="y", alpha=0.3)
+# plt.show()
 
 eval_df["value_gap"].describe()
 
 plt.figure(figsize=(6, 6))
 
-plt.scatter(eval_df["opt_value"], eval_df["qaoa_value"], alpha=0.6)
-lo = min(eval_df["opt_value"].min(), eval_df["qaoa_value"].min())
-hi = max(eval_df["opt_value"].max(), eval_df["qaoa_value"].max())
-plt.plot([lo, hi], [lo, hi], linestyle="--", label="y = x")
+# plt.scatter(eval_df["opt_value"], eval_df["qaoa_value"], alpha=0.6)
+# lo = min(eval_df["opt_value"].min(), eval_df["qaoa_value"].min())
+# hi = max(eval_df["opt_value"].max(), eval_df["qaoa_value"].max())
+# plt.plot([lo, hi], [lo, hi], linestyle="--", label="y = x")
 
-plt.xlabel("Optimal value")
-plt.ylabel("QAOA-selected value")
-plt.title("QAOA vs Optimal Decision Value")
-plt.grid(alpha=0.3)
-plt.legend()
-#plt.show()
+# plt.xlabel("Optimal value")
+# plt.ylabel("QAOA-selected value")
+# plt.title("QAOA vs Optimal Decision Value")
+# plt.grid(alpha=0.3)
+# plt.legend()
+# plt.show()
 
 r"""## 15. Decision Error Score (DES) and Quantum Error Score (QES)
 
