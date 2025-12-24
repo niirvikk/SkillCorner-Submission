@@ -821,11 +821,7 @@ def evaluate_qaoa_vs_bruteforce(
         })
 
     df = pd.DataFrame(records)
-    if not df.empty:
-      #print("QAOA match rate:", df["qaoa_matches_opt"].mean())
-      #print("Mean value gap:", df["value_gap"].mean())
 
-    return df
 
 eval_df = evaluate_qaoa_vs_bruteforce(
     decision_moments,
