@@ -885,7 +885,7 @@ acc_by_k
 
 eval_df["value_gap"].describe()
 
-plt.figure(figsize=(6, 6))
+#plt.figure(figsize=(6, 6))
 
 # plt.scatter(eval_df["opt_value"], eval_df["qaoa_value"], alpha=0.6)
 # lo = min(eval_df["opt_value"].min(), eval_df["qaoa_value"].min())
