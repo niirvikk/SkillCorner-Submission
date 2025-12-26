@@ -1229,11 +1229,8 @@ for label, (_, row) in zip(ordered_labels, cluster_stats_sorted.iterrows()):
 cluster_to_label
 
 player_stats["cluster_label"] = player_stats["cluster"].map(cluster_to_label)
-display(
-    player_stats[
-        player_stats["carrier_id"].astype(int) == 135056
-    ]
-)
+display(player_stats.loc[[135056]])
+
 
 
 
