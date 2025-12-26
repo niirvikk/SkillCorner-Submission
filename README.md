@@ -67,6 +67,7 @@ These metrics enable consistent comparison across decision moments without relyi
 
 - **submission.ipynb** contains the final submission logic and is the primary artefact evaluated.
 - **All data** required to run the project is stored under `src/data`.
+- **core.py** contains the complete implementation of the optimisation pipeline and evaluation logic used throughout the project
 - **explanation.ipynb** provides a detailed, line-by-line walkthrough of the entire codebase and includes the full Dirac-3 implementation.
 
 ---
