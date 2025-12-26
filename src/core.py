@@ -1229,7 +1229,8 @@ for label, (_, row) in zip(ordered_labels, cluster_stats_sorted.iterrows()):
 cluster_to_label
 
 player_stats["cluster_label"] = player_stats["cluster"].map(cluster_to_label)
-display(player_stats.head())
+display(player_stats[player_stats["carrier_id"] == 135056])
+
 
 r"""## Example Decision Moment – QAOA vs Optimal vs Actual Pass (Moment #2)
 
